@@ -1,11 +1,3 @@
-$blue: #02883a;
-$gray: #bbbbbb;
-$red: #e74c3c;
-$redHover:#ff8a7d ;
-
-* {
-  font-family: 'Roboto', sans-serif;
-}
 
 .container {
   text-align: center;
@@ -15,90 +7,6 @@ $redHover:#ff8a7d ;
   display: none;
 }
 
-.button {
-  outline: none;
-  height: 40px;
-  width: 130px;
-  border-radius: 40px;
-  background: #fff;
-  border: 2px solid $blue;
-  color: $blue;
-  letter-spacing: 1px;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.25s ease;
-
-  &::after {
-    content: "UPLOAD";
-  }
-
-  &:hover {
-    color: white;
-    background: $blue;
-  }
-
-  &:active {
-    letter-spacing: 2px;
-  }
-}
-
-.onclick {
-  width: 40px;
-  border-color: $gray;
-  border-width: 3px;
-  font-size: 0;
-  border-left-color: $blue;
-  animation: rotating 2s 0.25s linear infinite;
-
-  &::after {
-    content: "";
-  }
-
-  &:hover {
-    color: $blue;
-    background: white;
-  }
-}
-
-.validate {
-  font-size: 13px;
-  color: white;
-  background: $blue;
-
-  &::after {
-    font-family: 'FontAwesome';
-  }
-}
-
-.abort {
-  font-size: 13px;
-  color: white;
-  background: $red;
-  border-color: $red;
-
-  &:hover {
-    background-color: $redHover !important;
-    border-color: $redHover;
-    background: white;
-  }
-
-  &::after {
-    font-family: 'FontAwesome';
-    content: "CANCEL"; // cross
-  }
-}
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .info {
   margin-top: 10px;
 }
@@ -106,22 +14,6 @@ $redHover:#ff8a7d ;
 .filename {
   font-size: 0.85rem;
   margin-bottom: 4px;
-}
-
-.cancelButton {
-  background: transparent;
-  border: 1px solid $red;
-  color: $red;
-  border-radius: 8px;
-  padding: 4px 8px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: background 0.2s ease;
-
-  &:hover {
-    background: $red !important;
-    color: white;
-  }
 }
 
 .error {

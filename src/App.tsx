@@ -1,6 +1,6 @@
 import "./App.scss";
 import CsvUploader from "./components/CsvUploader/CsvUploader";
-import EmployeeProjectGrid from "./components/DataGrid/DataGrid";
+import EmployeeTable from "./components/DataGrid/DataWrapper";
 import { CsvProvider } from "./context/CsvContext";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <div className="App">
         <h1>CSV Uploader</h1>
         <CsvUploader />
-        <EmployeeProjectGrid />
+        <EmployeeTable />
       </div>
     </CsvProvider>
   );

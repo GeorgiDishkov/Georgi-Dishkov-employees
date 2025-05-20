@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useCsv } from "../../context/CsvContext";
 import { parseCsvText } from "../../utils/parseDate";
 import "./CsvUploader.scss";
+import AnimatedButton from "../AnimatedButton/AnimatedButton";
 
 const CsvUploader = () => {
   const [error, setError] = useState<string | null>(null);
@@ -76,13 +77,13 @@ const CsvUploader = () => {
         className="hiddenInput"
       />
 
-      <button
-        className={`button 
-      ${buttonState === "loading" ? "onclick" : ""} 
-      ${buttonState === "success" ? "validate" : ""} 
-      ${buttonState === "abort" ? "abort" : ""}`}
+      <AnimatedButton
         onClick={buttonState === "abort" ? handleAbort : triggerFileInput}
-      ></button>
+        buttonState={buttonState}
+        customSuccessText="Success"
+        customAbortText="Clear"
+        customDefaultText="Upload CSV"
+      />
 
       {filename && (
         <div className="info">

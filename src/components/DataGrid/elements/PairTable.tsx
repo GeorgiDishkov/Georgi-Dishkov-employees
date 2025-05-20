@@ -1,24 +1,9 @@
-import { useEffect, useState } from "react";
-import { useCsv } from "../../context/CsvContext";
-import { findEmployeePairs } from "../../utils/findEmployeePairs";
 import "./DataGrid.scss";
 
-const EmployeeProjectGrid = () => {
-  const [pairs, setPairs] = useState<any[]>([]);
-  const { csvData } = useCsv();
-
-  useEffect(() => {
-    if (!csvData || csvData.length === 0) {
-      setPairs([]);
-      return;
-    }
-    const result = findEmployeePairs(csvData);
-    setPairs(result);
-  }, [csvData]);
-
+export const PairTable = ({ data }: any) => {
   return (
     <div className="wrapper">
-      {pairs.length > 0 ? (
+      {data && data.length > 0 ? (
         <table>
           <thead>
             <tr>
@@ -29,7 +14,7 @@ const EmployeeProjectGrid = () => {
             </tr>
           </thead>
           <tbody>
-            {pairs.map((row, index) => (
+            {data.map((row: any, index: number) => (
               <tr key={index}>
                 <td>{row.Emp1}</td>
                 <td>{row.Emp2}</td>
@@ -45,5 +30,3 @@ const EmployeeProjectGrid = () => {
     </div>
   );
 };
-
-export default EmployeeProjectGrid;
